@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="brand-title">LensHop</h1>
+        <p class="brand-tagline">Jump into a universe of stunning, high-definition imagery.</p>
+    </header>
+
+     <main class="app-container">
+        <!-- Search Control wrapped in a form -->
+        <form class="search-form" onsubmit="return false;">
+            <div class="search-group">
+                <label for="search-input" class="search-label">Search for images</label>
+                <input type="search" id="search-input" placeholder="e.g., Mystic Mountains, Cyberpunk City...">
+            </div>
+            <button type="submit" id="search-button">Search</button>
+        </form>
+
+        <div class="suggestion-chips">
+            <button type="button" class="chip">Nature</button>
+            <button type="button" class="chip">Architecture</button>
+            <button type="button" class="chip">Animals</button>
+            <button type="button" class="chip">Minimalism</button>
+        </div>
+        <div id="image-results-grid" class="results-grid">
+            <div id="empty-state-msg" class="empty-state">
+                <p>Search to see results</p>
+            </div>
+        </div>
+     </main>
+     
+     <script src="script.js"></script>
+</body>
+</html>
