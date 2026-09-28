@@ -10,7 +10,6 @@ form.addEventListener("submit", async (event) => {
   const response = await fetch(url);
   if (!response.ok) throw new Error(response.status);
   const data = await response.json();
-
   const items = Object.values(data.query.pages);
   render(items);                             // the function from block 3
 });
