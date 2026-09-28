@@ -13,7 +13,6 @@ form.addEventListener("submit", async (event) => {
   const items = Object.values(data.query.pages);
   render(items);                             // the function from block 3
 });
-
 try {
   const res = await fetch(url);
   if (!res.ok) throw new Error(res.status);   // bad status -> jump to catch
