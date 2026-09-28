@@ -14,3 +14,18 @@ form.addEventListener("submit", async (event) => {
   const items = Object.values(data.query.pages);
   render(items);                             // the function from block 3
 });
+
+try {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(res.status);   // bad status -> jump to catch
+  const data = await res.json();
+  const items = Object.values(data.query.pages);
+
+  if (items.length === 0) {
+    status.textContent = "No results. Try another search.";  // EMPTY state
+  } else {
+    render(items);                                           // RESULTS state
+  }
+} catch (err) {
+  status.textContent = "Something went wrong. Please try again."; // ERROR state
+}
